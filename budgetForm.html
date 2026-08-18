@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์ม รายรับ/รายจ่าย</title>
+    <script src="budgetForm.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1>แบบฟอร์ม รายรับ/รายจ่าย</h1>
+
+        <form id="budgetform"> 
+            <label for="item">ชื่อรายการ:</label>
+            <input type="text" id="item" required maxlength="50" placeholder="กรุณากรอกข้อมูล">
+            <br><br>
+
+            <label for="amount">จำนวนเงิน:</label>
+            <input type="number" id="amount" required min="0" step="1">
+            <br><br>
+
+            <label for="date">วันที่:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="select">ประเภทรายการ:</label>
+            <select id="select" name="select" required>
+                <option value="">--ประเภทรายการ--</option>
+                <option value="รายรับ">รายรับ</option>
+                <option value="รายจ่าย">รายจ่าย</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="ตกลง">
+            <input type="reset" value="ยกเลิก">
+            <button type="button" id="deleteAllBtn">ลบข้อมูลทั้งหมด</button>
+            <br><br>
+        </form>
+    </div>
+
+    <div>
+        <h3>ส่วนที่ใช้แสดงรายรับทั้งหมด</h3>
+        <ul id="incomeList"></ul>
+        <p id="totalIncome">ยอดรวมรายรับ: 0 บาท</p>
+    </div>
+
+    <div>
+        <h3>ส่วนที่ใช้แสดงผลรายจ่ายทั้งหมด</h3>
+        <ul id="expenseList"></ul>
+        <p id="totalExpense">ยอดรวมรายจ่าย: 0 บาท</p>
+    </div>
+
+    <div>
+        <p id="totalBalance">ยอดคงเหลือ: 0 บาท</p>
+    </div>
+</body>
+</html>
